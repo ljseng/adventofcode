@@ -20,7 +20,7 @@ export const findFirstInstructionIdxEnterBasement = (instructionStr) => {
     let idx = 0;
 
     const instructions = instructionStr.split('');
-    for (let instruction of instructions) {
+    for (const instruction of instructions) {
         ++idx;
 
         switch (instruction) {
