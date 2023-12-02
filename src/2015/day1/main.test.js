@@ -1,5 +1,4 @@
 import { expect, test, describe } from "bun:test";
-
 import { decodeFloor, findFirstInstructionIdxEnterBasement } from "./main";
 
 describe("Decode floor", () => {
