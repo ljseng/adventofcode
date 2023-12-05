@@ -7,13 +7,11 @@ const scrambledLinesStr = await inputFileHdr.text();
 const sum = scrambledLinesStr
     .trim('\n')
     .split('\n')
-    .map(scrambledLine => {
+    .map((scrambledLine) => {
         return replaceSpellDigits(scrambledLine);
     })
     .reduce((sum, line) => {
         sum += recalibrateLine(line);
         return sum;
-    }, 0)
-    ;
-;
+    }, 0);
 console.log(sum);

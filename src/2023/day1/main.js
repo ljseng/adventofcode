@@ -18,24 +18,52 @@ export const recalibrateLine = (scrambledLine) => {
 };
 
 export const replaceSpellDigits = (str) => {
-    const pattern1 = /(?<!tw)one/gi;
-    const pattern2 = /(?<!eigh)two/gi;
-    const pattern3 = /(?<!eigh)three/gi;
-    const pattern4 = /four/gi;
-    const pattern5 = /five/gi;
-    const pattern6 = /six/gi;
-    const pattern7 = /seven/gi;
-    const pattern8 = /(?<!(nin|fiv|thre|on))eight/gi;
-    const pattern9 = /(?<!seve)nine/gi;
+    // one
+    const pattern21 = /twone/gi;
+    const patternx1 = /one/gi;
 
+    // two
+    const pattern82 = /eightwo/gi;
+    const patternx2 = /two/gi;
+
+    // three
+    const pattern83 = /eighthree/gi;
+    const patternx3 = /three/gi;
+
+    // four, five, six, seven
+    const patternx4 = /four/gi;
+    const patternx5 = /five/gi;
+    const patternx6 = /six/gi;
+    const patternx7 = /seven/gi;
+
+    // eight
+    const pattern98 = /nineight/gi;
+    const pattern58 = /fiveight/gi;
+    const pattern38 = /threeight/gi;
+    const pattern18 = /oneight/gi;
+    const patternx8 = /eight/gi;
+
+    // nine
+    const pattern79 = /sevenine/gi;
+    const patternx9 = /nine/gi;
+
+    // replace accordingly
     return str
-        .replace(pattern1, '1')
-        .replace(pattern2, '2')
-        .replace(pattern3, '3')
-        .replace(pattern4, '4')
-        .replace(pattern5, '5')
-        .replace(pattern6, '6')
-        .replace(pattern7, '7')
-        .replace(pattern8, '8')
-        .replace(pattern9, '9');
+        .replace(pattern21, '21')
+        .replace(pattern82, '82')
+        .replace(pattern83, '83')
+        .replace(pattern98, '98')
+        .replace(pattern58, '58')
+        .replace(pattern38, '38')
+        .replace(pattern18, '18')
+        .replace(pattern79, '79')
+        .replace(patternx1, '1')
+        .replace(patternx2, '2')
+        .replace(patternx3, '3')
+        .replace(patternx4, '4')
+        .replace(patternx5, '5')
+        .replace(patternx6, '6')
+        .replace(patternx7, '7')
+        .replace(patternx8, '8')
+        .replace(patternx9, '9');
 };
