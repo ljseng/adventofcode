@@ -17,18 +17,39 @@ export const recalibrateLine = (scrambledLine) => {
     return Number(`${digits[0]}${digits[digits.length - 1]}`);
 };
 
+const expandSpellDigitsSharingChar = (str) => {
+    const pattern21 = /twone/gi;
+    const pattern82 = /eightwo/gi;
+    const pattern83 = /eighthree/gi;
+    const pattern98 = /nineight/gi;
+    const pattern58 = /fiveight/gi;
+    const pattern38 = /threeight/gi;
+    const pattern18 = /oneight/gi;
+    const pattern79 = /sevenine/gi;
+
+    return str
+        .replace(pattern21, 'twoone')
+        .replace(pattern82, 'eighttwo')
+        .replace(pattern83, 'eightthree')
+        .replace(pattern98, 'nineeight')
+        .replace(pattern58, 'fiveeight')
+        .replace(pattern38, 'threeeight')
+        .replace(pattern18, 'oneeight')
+        .replace(pattern79, 'sevennine');
+};
+
 export const replaceSpellDigits = (str) => {
-    const pattern1 = /(?<!tw)one/gi;
-    const pattern2 = /(?<!eigh)two/gi;
-    const pattern3 = /(?<!eigh)three/gi;
+    const pattern1 = /one/gi;
+    const pattern2 = /two/gi;
+    const pattern3 = /three/gi;
     const pattern4 = /four/gi;
     const pattern5 = /five/gi;
     const pattern6 = /six/gi;
     const pattern7 = /seven/gi;
-    const pattern8 = /(?<!(nin|fiv|thre|on))eight/gi;
-    const pattern9 = /(?<!seve)nine/gi;
+    const pattern8 = /eight/gi;
+    const pattern9 = /nine/gi;
 
-    return str
+    return expandSpellDigitsSharingChar(str)
         .replace(pattern1, '1')
         .replace(pattern2, '2')
         .replace(pattern3, '3')
