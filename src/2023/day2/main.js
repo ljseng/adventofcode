@@ -45,3 +45,26 @@ export const findPossibleDraw = (draw) => {
 
     return possible;
 };
+
+export const findFewestCubeCountEachColor = (record) => {
+    const fewest = record.draws.reduce(
+        (fewest, draw) => {
+            if (draw.cubeColor === 'red' && draw.cubeCount > fewest.red) {
+                fewest.red = draw.cubeCount;
+            }
+
+            if (draw.cubeColor === 'green' && draw.cubeCount > fewest.green) {
+                fewest.green = draw.cubeCount;
+            }
+
+            if (draw.cubeColor === 'blue' && draw.cubeCount > fewest.blue) {
+                fewest.blue = draw.cubeCount;
+            }
+
+            return fewest;
+        },
+        { red: 0, green: 0, blue: 0 },
+    );
+
+    return { id: record.id, fewest: fewest };
+};
