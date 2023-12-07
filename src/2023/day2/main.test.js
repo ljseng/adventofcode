@@ -40,7 +40,6 @@ describe('Cube Conundrum', () => {
 
     test('Part 2 - Find fewest number of cubes of each color', () => {
         const {
-            id,
             fewest: { red, green, blue },
         } = findFewestCubeCountEachColor(decipherGameRecord(inputs[0]));
         expect(red).toBe(4);
